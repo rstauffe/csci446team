@@ -1,0 +1,23 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Cats for Adoption</h1>
+
+<% cache ['adoption', Cat.latest] do %>
+<% @cats.each do |cat| %>
+	<% cache ['entry', cat] do %>
+	<% if cat.status == 'Available' %>
+	<div class="entry">
+		<%= image_tag(cat.image_url) %>
+		<h3><%= cat.name %>-<%= cat.breed %></h3>
+		<%= sanitize(cat.description) %>
+		<div class="price_line">
+			<%= button_to 'Consider', adopted_pets_path(cat_id: cat), remote: true %>
+			<%= link_to 'Select Pet', adopt_index_path(cat_id: cat)%>
+		</div>
+	</div>	
+	<% end %>
+	<% end %>
+  <% end %>
+<% end %>
