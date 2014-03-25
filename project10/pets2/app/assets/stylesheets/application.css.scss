@@ -40,7 +40,8 @@
 
 #columns {
   background: #5c5742;
-
+  height: 100vh;
+  
   #main {
     margin-left: 17em;
     padding: 1em;
@@ -119,4 +120,12 @@
 	  display: none
 	}
   }
+}
+
+footer{
+	background:  #e59400;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+
 }
