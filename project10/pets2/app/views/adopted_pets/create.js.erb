@@ -1,3 +1,4 @@
+//This checks if the cart does not exist and if it doesnt then it will scroll out
 if ($('#selection tr').length == 0) {$('#selection').show('blind', 1000); }
 
 $('#selection').html("<%= escape_javascript render(@selection) %>");
