@@ -11,13 +11,14 @@ class Cat < ActiveRecord::Base
 	has_many :adopted_pets
 	
 	before_destroy :ensure_not_referenced_by_any_adopted_pet
-	
+
+	#Add the new instance of the cat to the list of cats
   def self.latest
     Cat.order(:updated_at).last
   end
   
   private
-  
+  	#This makes sure that an instznce of a cat is not already inside of the db
 	def ensure_not_referenced_by_any_adopted_pet
 		if adopted_pets.empty?
 			return true
