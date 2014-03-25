@@ -15,7 +15,6 @@ class FosterParentsController < ApplicationController
   # GET /foster_parents/new
   def new
     @foster_parent = FosterParent.new
-    
   end
 
   # GET /foster_parents/1/edit
