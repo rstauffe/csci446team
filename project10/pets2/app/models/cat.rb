@@ -1,7 +1,9 @@
 class Cat < ActiveRecord::Base
   STATUS_TYPES = ['Available', 'Fostered']
+  	#these will validate that the cats that are being created by users have the correct pararmeters
 	validates :name, :breed, :description, :image_url, :status, presence: true
 	validates :description, uniqueness: true
+	#allow us to check to make sure that the image is a gif, jpg, or png
 	validates :image_url, allow_blank: true, format: {
 		with: %r{\.(gif|jpg|png)\Z}i,
 		message: 'must be a URL for GIF, JPG, or PNG image.'
