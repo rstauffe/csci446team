@@ -1,0 +1,9 @@
+This repo holds the worlds most advanced pet exchange platform in the world. Thanks to the incredible power of ruby on rails the entire world may now adopt pets using the most powerful tools in the world.
+
+Usage:
+
+In pets2 directory:
+	rails server
+
+Then:
+Go to localhost:3000 in webserver and join the fun!
