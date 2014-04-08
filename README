@@ -1,3 +1,5 @@
+This does not work in windows 8 because of the way that sorcery interacts with java
+
 This repo holds the worlds most advanced pet exchange platform in the world. Thanks to the incredible power of ruby on rails the entire world may now adopt pets using the most powerful tools in the world.
 
 Usage:
