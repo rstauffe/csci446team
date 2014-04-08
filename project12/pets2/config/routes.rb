@@ -1,4 +1,6 @@
 Pets::Application.routes.draw do
+  resources :users
+
   resources :foster_parents do
     collection do
       get :fosters
