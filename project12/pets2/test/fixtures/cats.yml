@@ -1,0 +1,22 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  breed: MyString
+  image_url: MyString.jpg
+  description: MyText
+  status: Available
+
+two:
+  name: MyString
+  breed: MyString
+  image_url: MyString.jpg
+  description: MyText
+  status: Available
+  
+test: 
+  name: Tiger
+  breed: CatBreed
+  image_url: picture.jpg
+  description: <p>This is a cat.</p>
+  status: Available
