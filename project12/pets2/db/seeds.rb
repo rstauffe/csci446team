@@ -23,3 +23,6 @@ Cat.create(name: 'Charles II', breed: 'Tabby', image_url: 'tabby-cat.jpg',
 	description: 
 	%{<p>Charles II is Charles' twin, but someone already adopted him.</p>},
     status: 'Fostered')
+    
+User.delete_all
+User.create(email: 'admin', password: 'password', password_confirmation: 'password', admin: true)

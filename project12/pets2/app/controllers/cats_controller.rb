@@ -1,5 +1,5 @@
 class CatsController < ApplicationController
-  skip_before_filter :require_login, only: [:index]
+  skip_before_filter :require_login, only: [:index, :show]
   before_action :set_cat, only: [:show, :edit, :update, :destroy]
 
   # GET /cats
@@ -15,11 +15,21 @@ class CatsController < ApplicationController
 
   # GET /cats/new
   def new
+    if !current_user
+      redirect_to :cats, notice: 'Only admins may access this list.'
+    elsif !current_user.admin
+        redirect_to :cats, notice: 'Only admins may access this list.'
+    end
     @cat = Cat.new
   end
 
   # GET /cats/1/edit
   def edit
+    if !current_user
+      redirect_to :cats, notice: 'Only admins may access this list.'
+    elsif !current_user.admin
+      redirect_to :cats, notice: 'Only admins may access this list.'
+    end
   end
 
   # POST /cats

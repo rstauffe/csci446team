@@ -5,6 +5,11 @@ class UsersController < ApplicationController
   # GET /users
   # GET /users.json
   def index
+    if !current_user
+      redirect_to :adoption, notice: 'Only admins may access this list.'
+    elsif !current_user.admin
+        redirect_to :adoption, notice: 'Only admins may access this list.'
+    end
     @users = User.all
   end
 
@@ -70,6 +75,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:email, :password, :password_confirmation)
+      params.require(:user).permit(:email, :password, :password_confirmation, :admin)
     end
 end
