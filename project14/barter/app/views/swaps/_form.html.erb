@@ -1,0 +1,45 @@
+<%= form_for(@swap) do |f| %>
+  <% if @swap.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@swap.errors.count, "error") %> prohibited this swap from being saved:</h2>
+
+      <ul>
+      <% @swap.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :orig_name %><br>
+    <%= f.text_field :orig_name %>
+  </div>
+  <div class="field">
+    <%= f.label :orig_desc %><br>
+    <%= f.text_area :orig_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :orig_image %><br>
+    <%= f.text_field :orig_image %>
+  </div>
+  <div class="field">
+    <%= f.label :swap_name %><br>
+    <%= f.text_field :swap_name %>
+  </div>
+  <div class="field">
+    <%= f.label :swap_desc %><br>
+    <%= f.text_area :swap_desc %>
+  </div>
+  <div class="field">
+    <%= f.label :swap_image %><br>
+    <%= f.text_field :swap_image %>
+  </div>
+  <div class="field">
+    <%= f.label :time %><br>
+    <%= f.datetime_select :time %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
