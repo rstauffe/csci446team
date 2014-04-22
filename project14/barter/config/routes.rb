@@ -1,4 +1,6 @@
 Barter::Application.routes.draw do
+  resources :users
+
   resources :swaps
 
   resources :items
