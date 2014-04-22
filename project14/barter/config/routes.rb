@@ -2,7 +2,7 @@ Barter::Application.routes.draw do
   
   get "catalog/index"
   get 'login' => 'user_sessions#new', :as => :login
-  get 'logout' => 'user_sessions#destroy', :as => :logout
+  post 'logout' => 'user_sessions#destroy', :as => :logout
   resources :user_sessions
   resources :users
 
