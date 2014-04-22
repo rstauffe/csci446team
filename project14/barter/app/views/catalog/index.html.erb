@@ -4,9 +4,11 @@
 <% end %>
 
 <% @items.each do |item| %>
-  <div class="entry">
-    <%= image_tag(item.image) %>
-    <h3><%= item.name %></h3>
-    <%= sanitize(item.description) %>
-  </div>
+  <% if !item.is_used %>
+	  <div class="entry">
+		<%= image_tag(item.image) %>
+		<h3><%= item.name %></h3>
+		<%= sanitize(item.description) %>
+	  </div>
+  <% end %>
 <% end %>
