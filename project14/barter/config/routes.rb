@@ -1,9 +1,12 @@
 Barter::Application.routes.draw do
+  get "catalog/index"
   resources :users
 
   resources :swaps
 
   resources :items
+  
+  root "catalog#index", as: 'catalog'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
