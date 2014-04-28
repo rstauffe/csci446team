@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Barter System</title>
+  <!-- <label id="code.slt"/> --><%= stylesheet_link_tag    "application", media: "all",
+    "data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application", "data-turbolinks-track" => true %><!-- <label id="code.jlt"/> -->
+  <%= csrf_meta_tags %><!-- <label id="code.csrf"/> -->
+</head>
+<body class="<%= controller.controller_name %>">
+  <div id="banner">
+    <%= image_tag("logo.png") %>
+    <%= @page_title || "The Barter Store" %><!-- <label id="code.depot.e.title"/> -->
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><%= link_to "Home", catalog_path %></li>
+        <li><%= link_to "Item Management", items_path %></li>
+		<li><%= link_to "Completed Swaps", swaps_path %></li>
+		<% if current_user %>
+		  <li><%= link_to "Edit Profile", edit_user_path(current_user.id) %></li>
+		  <li><%= link_to "Logout", :logout, method: :post %></li>
+		<% else %>
+		  <li><%= link_to "Register", new_user_path %></li>
+		  <li><%= link_to "Login", :login %></li>
+		<% end %>
+      </ul>
+    </div>
+    <div id="main">
+      <%= yield %>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Orig name:</strong>
+  <%= @swap.orig_name %>
+</p>
+
+<p>
+  <strong>Orig desc:</strong>
+  <%= @swap.orig_desc %>
+</p>
+
+<p>
+  <strong>Orig image:</strong>
+  <%= @swap.orig_image %>
+</p>
+
+<p>
+  <strong>Swap name:</strong>
+  <%= @swap.swap_name %>
+</p>
+
+<p>
+  <strong>Swap desc:</strong>
+  <%= @swap.swap_desc %>
+</p>
+
+<p>
+  <strong>Swap image:</strong>
+  <%= @swap.swap_image %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @swap.time %>
+</p>
+
+<%= link_to 'Edit', edit_swap_path(@swap) %> |
+<%= link_to 'Back', swaps_path %>

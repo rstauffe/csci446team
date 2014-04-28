@@ -1,0 +1,10 @@
+e48ea3224528b1b6255921251bc1d1f9c8e492ef fixed logout bug, added redirect to homepage on register/logout
+b2bc161992899a2704bf7bc798c0c3ca81f164de added login/logout capability
+3842d407fb30b8ef2c13a0b79f8ee21a27c371fa added application css and hyperlinks to pages
+513d5bfc427290869ad7a2a31c21d2e6ae7ac8f6 added demo css to front page
+4e9f44c1a60f45cb76cd2bb4d1c44d940034dbe1 added ability to hide items that have been used in a trade
+e572c1e41b920a35a0caa7f35b8324b2f0cbc8da added catalog scaffold
+de6ad5bc2d99f4ea893bedc32627e63377966823 added Sorcery for user authentication
+5d2774b4694e6a5705b56bcbf3ec82e9ac88b1db added item and swap scaffolds
+f3b8a8cf304c2ce9fc2d6fa7a3683b20351e5b20 initialization of barter project
+
