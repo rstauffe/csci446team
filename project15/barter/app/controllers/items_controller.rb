@@ -1,10 +1,12 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  skip_before_filter :require_login, only: [:index]
 
   # GET /items
   # GET /items.json
   def index
     @items = Item.all
+    @currentuser = current_user
   end
 
   # GET /items/1
