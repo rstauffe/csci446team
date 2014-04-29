@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140428233903) do
+ActiveRecord::Schema.define(version: 20140429004936) do
 
   create_table "items", force: true do |t|
     t.string   "name"
@@ -26,13 +26,10 @@ ActiveRecord::Schema.define(version: 20140428233903) do
   add_index "items", ["user_id"], name: "index_items_on_user_id"
 
   create_table "swaps", force: true do |t|
-    t.string   "orig_name"
-    t.text     "orig_desc"
-    t.string   "orig_image"
-    t.string   "swap_name"
-    t.text     "swap_desc"
-    t.string   "swap_image"
-    t.datetime "time"
+    t.integer  "item1"
+    t.string   "name"
+    t.text     "description"
+    t.string   "image"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

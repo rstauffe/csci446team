@@ -6,6 +6,7 @@ class SwapsController < ApplicationController
   # GET /swaps.json
   def index
     @swaps = Swap.all
+    @items = Item.all
   end
 
   # GET /swaps/1
@@ -70,6 +71,6 @@ class SwapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def swap_params
-      params.require(:swap).permit(:orig_name, :orig_desc, :orig_image, :swap_name, :swap_desc, :swap_image, :time)
+      params.require(:swap).permit(:item1, :name, :description, :image)
     end
 end

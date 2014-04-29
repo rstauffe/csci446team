@@ -1,19 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  orig_name: MyString
-  orig_desc: MyText
-  orig_image: MyString
-  swap_name: MyString
-  swap_desc: MyText
-  swap_image: MyString
-  time: 2014-04-21 17:41:02
+  item1: 
+  name: MyString
+  description: MyText
+  image: MyString
+  time: 2014-04-28 18:50:06
 
 two:
-  orig_name: MyString
-  orig_desc: MyText
-  orig_image: MyString
-  swap_name: MyString
-  swap_desc: MyText
-  swap_image: MyString
-  time: 2014-04-21 17:41:02
+  item1: 
+  name: MyString
+  description: MyText
+  image: MyString
+  time: 2014-04-28 18:50:06
