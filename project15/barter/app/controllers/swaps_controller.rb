@@ -8,6 +8,12 @@ class SwapsController < ApplicationController
     @swaps = Swap.all
     @items = Item.all
   end
+  
+  # GET /pending
+  def pending
+    @swaps = Swap.all
+    @items = Item.all
+  end
 
   # GET /swaps/1
   # GET /swaps/1.json
@@ -71,6 +77,6 @@ class SwapsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def swap_params
-      params.require(:swap).permit(:item1, :name, :description, :image)
+      params.require(:swap).permit(:item1, :name, :description, :image, :completed)
     end
 end
