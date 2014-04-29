@@ -10,6 +10,11 @@
 		<div class="info">
 			<h3><%= item.name %></h3>
 			<h4><%= sanitize(item.description) %></h4>
+			<% if (current_user) %>
+				<%if (current_user.id != item.user_id) %>
+					<h4><%= link_to 'Propose Swap', new_swap_path(item.id) %></h4>
+					<% end %>
+			<% end %>
 		</div>
 	  </div>
   <% end %>

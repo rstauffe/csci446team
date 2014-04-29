@@ -55,6 +55,8 @@ body {
     
   #main {
     color: #FFFFFF;
+	a:link {color: #FFFFFF; text-decoration: underline; }
+	a:hover {color: #CCCCCC; text-decoration: underline; }
     margin-left: 17em;
     padding: 1em;
     border:groove;
