@@ -12,12 +12,28 @@
  *= require_tree .
  */
 
+#pinched {
+  margin: 10px auto;
+  margin-right: auto;
+  margin-left: auto;
+  width: 1000px;
+}
+
+
+body {
+  background: image-url("background.jpg") no-repeat center fixed;
+  color: white;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+
  #banner {
-  background: #9c9;
+  background-color: rgba(255,255,255,.1);
   padding: 10px;
   border-bottom: 2px solid;
   font: small-caps 40px/40px "Times New Roman", serif;
-  color: #282;
+  color: #FFFFFF;
   text-align: center;
 
   img {
@@ -35,26 +51,31 @@
 }
 
 #columns {
-  background: #141;
-
+  /*background: #000066;*/
+    
   #main {
+    color: #FFFFFF;
     margin-left: 17em;
     padding: 1em;
-    background: white;
+    border:groove;
+    border-radius: 13px 13px 13px 13px;
+    background-color: rgba(0,0,0,.33);
   }
 
   #side {
     float: left;
     padding: 1em 2em;
     width: 13em;
-    background: #141;
-	
+    background-color: rgba(72,72,181,0.5);
+    border:groove;
+    border-radius: 13px 13px 13px 13px;
+    padding-right: 5px;
     ul {
       padding: 0;
       li {
         list-style: none;
         a {
-          color: #bfb;
+          color: #FFFFFF;/*#bfb;*/
           font-size: small;
         }
       }
