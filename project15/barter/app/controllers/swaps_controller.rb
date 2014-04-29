@@ -23,6 +23,7 @@ class SwapsController < ApplicationController
   # GET /swaps/new
   def new
     @swap = Swap.new
+    @item1 = params[:item1]
   end
 
   # GET /swaps/1/edit

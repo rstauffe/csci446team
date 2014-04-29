@@ -10,10 +10,10 @@
       </ul>
     </div>
   <% end %>
-
   <div class="field">
-    <%= f.label :item1 %><br>
-    <%= f.text_field :item1 %>
+  <% if params[:item1] %>
+  <%= hidden_field_tag 'swap[item1]', params[:item1], {:id => 'swap_item1'} %>
+  <% end %>
   </div>
   <div class="field">
     <%= f.label :name %><br>
