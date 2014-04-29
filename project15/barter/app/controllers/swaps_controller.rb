@@ -1,6 +1,6 @@
 class SwapsController < ApplicationController
   before_action :set_swap, only: [:show, :edit, :update, :destroy]
-  skip_before_filter :require_login
+  skip_before_filter :require_login, except: [:new, :create]
 
   # GET /swaps
   # GET /swaps.json
