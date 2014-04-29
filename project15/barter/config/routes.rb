@@ -6,7 +6,11 @@ Barter::Application.routes.draw do
   resources :user_sessions
   resources :users
 
-  resources :swaps
+  resources :swaps do
+    collection do
+      get 'pending'
+    end
+  end
 
   resources :items
   

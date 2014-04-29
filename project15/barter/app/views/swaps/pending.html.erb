@@ -1,0 +1,42 @@
+<h1>Pending Swaps</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Original Item Name</th>
+	  <th>Original Item Description</th>
+	  <th>Original Item Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @swaps.each do |swap| %>
+		<% if current_user %>
+			<%if ((current_user.id == swap.id) && (!swap.completed)) %>
+				<% @orig = @items.find(swap.item1) %>
+			  <tr>
+				<td><%= @orig.name %></td>
+				<td><%= @orig.description %></td>
+				<td><%= @orig.image %></td>
+				<td><%= swap.name %></td>
+				<td><%= swap.description %></td>
+				<td><%= swap.image %></td>
+				<td><%= link_to 'Show', swap %></td>
+				<td><%= link_to 'Edit', edit_swap_path(swap) %></td>
+				<td><%= link_to 'Destroy', swap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+			  </tr>
+			<% end %>
+		<% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Swap', new_swap_path %>

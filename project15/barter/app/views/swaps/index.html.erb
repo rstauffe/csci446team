@@ -1,15 +1,14 @@
-<h1>Listing swaps</h1>
+<h1>Completed Swaps</h1>
 
 <table>
   <thead>
     <tr>
-      <th>Orig name</th>
-      <th>Orig desc</th>
-      <th>Orig image</th>
-      <th>Swap name</th>
-      <th>Swap desc</th>
-      <th>Swap image</th>
-      <th>Time</th>
+      <th>Original Item Name</th>
+	  <th>Original Item Description</th>
+	  <th>Original Item Image</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -18,17 +17,21 @@
 
   <tbody>
     <% @swaps.each do |swap| %>
-      <tr>
-        <td><%= swap.orig_name %></td>
-        <td><%= swap.orig_desc %></td>
-        <td><%= swap.orig_image %></td>
-        <td><%= swap.swap_name %></td>
-        <td><%= swap.swap_desc %></td>
-        <td><%= swap.swap_image %></td>
-        <td><%= swap.time %></td>
-      </tr>
+		<% @orig = @items.find(swap.item1) %>
+		<% if (swap.completed) %>
+		  <tr>
+			<td><%= @orig.name %></td>
+			<td><%= @orig.description %></td>
+			<td><%= @orig.image %></td>
+			<td><%= swap.name %></td>
+			<td><%= swap.description %></td>
+			<td><%= swap.image %></td>
+		  </tr>
+		<% end %>
     <% end %>
   </tbody>
 </table>
 
 <br>
+
+<%= link_to 'New Swap', new_swap_path %>
