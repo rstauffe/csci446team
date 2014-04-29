@@ -27,9 +27,7 @@
 				<td><%= swap.name %></td>
 				<td><%= swap.description %></td>
 				<td><%= swap.image %></td>
-				<td><%= link_to 'Show', swap %></td>
-				<td><%= link_to 'Edit', edit_swap_path(swap) %></td>
-				<td><%= link_to 'Destroy', swap, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+				<td><%= link_to 'Accept', complete_swap_swaps_path(:id => swap.id), confirm: "Are you sure?" %></td>
 			  </tr>
 			<% end %>
 		<% end %>

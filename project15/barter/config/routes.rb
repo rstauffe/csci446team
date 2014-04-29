@@ -9,6 +9,7 @@ Barter::Application.routes.draw do
   resources :swaps do
     collection do
       get 'pending'
+      get 'complete_swap'
     end
   end
 

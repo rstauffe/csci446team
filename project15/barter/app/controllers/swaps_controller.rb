@@ -14,6 +14,16 @@ class SwapsController < ApplicationController
     @swaps = Swap.all
     @items = Item.all
   end
+  
+  def complete_swap
+    @swap = Swap.find(params[:id])
+    @swap.completed = true
+    @swap.save
+    @item = Item.find(@swap.item1)
+    @item.is_used = true
+    @item.save
+    redirect_to catalog_url
+  end
 
   # GET /swaps/1
   # GET /swaps/1.json
