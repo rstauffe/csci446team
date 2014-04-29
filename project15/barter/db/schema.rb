@@ -16,11 +16,12 @@ ActiveRecord::Schema.define(version: 20140429004936) do
   create_table "items", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.string   "image"
     t.boolean  "is_used"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "photo"
+    t.string   "image"
   end
 
   add_index "items", ["user_id"], name: "index_items_on_user_id"
