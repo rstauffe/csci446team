@@ -16,12 +16,17 @@ class SwapsController < ApplicationController
   end
   
   def complete_swap
-    @swap = Swap.find(params[:id])
-    @swap.completed = true
-    @swap.save
-    @item = Item.find(@swap.item1)
+    @updatedswap = Swap.find(params[:id])
+    @updatedswap.completed = true
+    @updatedswap.save
+    @item = Item.find(@updatedswap.item1)
     @item.is_used = true
     @item.save
+    for swap in Swap.all do 
+      if (swap.item1 == @updatedswap.item1) and (swap != @updatedswap)
+        swap.destroy
+      end
+    end
     redirect_to catalog_url
   end
 
@@ -47,7 +52,7 @@ class SwapsController < ApplicationController
 
     respond_to do |format|
       if @swap.save
-        format.html { redirect_to @swap, notice: 'Swap was successfully created.' }
+        format.html { redirect_to catalog_url, notice: 'Swap successfully proposed.' }
         format.json { render action: 'show', status: :created, location: @swap }
       else
         format.html { render action: 'new' }
@@ -61,7 +66,7 @@ class SwapsController < ApplicationController
   def update
     respond_to do |format|
       if @swap.update(swap_params)
-        format.html { redirect_to @swap, notice: 'Swap was successfully updated.' }
+        format.html { redirect_to catalog_url, notice: 'Swap was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -75,7 +80,7 @@ class SwapsController < ApplicationController
   def destroy
     @swap.destroy
     respond_to do |format|
-      format.html { redirect_to swaps_url }
+      format.html { redirect_to catalog_url }
       format.json { head :no_content }
     end
   end

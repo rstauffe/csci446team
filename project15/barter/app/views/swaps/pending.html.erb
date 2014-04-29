@@ -18,17 +18,19 @@
   <tbody>
     <% @swaps.each do |swap| %>
 		<% if current_user %>
-			<%if ((current_user.id == swap.id) && (!swap.completed)) %>
+			<%if (!swap.completed) %>
 				<% @orig = @items.find(swap.item1) %>
-			  <tr>
-				<td><%= @orig.name %></td>
-				<td><%= @orig.description %></td>
-				<td><%= @orig.image %></td>
-				<td><%= swap.name %></td>
-				<td><%= swap.description %></td>
-				<td><%= swap.image %></td>
-				<td><%= link_to 'Accept', complete_swap_swaps_path(:id => swap.id), confirm: "Are you sure?" %></td>
-			  </tr>
+				<% if (current_user.id == @orig.user_id) %>
+				  <tr>
+					<td><%= @orig.name %></td>
+					<td><%= @orig.description %></td>
+					<td><%= @orig.image %></td>
+					<td><%= swap.name %></td>
+					<td><%= swap.description %></td>
+					<td><%= swap.image %></td>
+					<td><%= link_to 'Accept', complete_swap_swaps_path(:id => swap.id), confirm: "Are you sure?" %></td>
+				  </tr>
+			  <% end %>
 			<% end %>
 		<% end %>
     <% end %>
@@ -36,5 +38,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Swap', new_swap_path %>
