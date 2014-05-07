@@ -10,4 +10,6 @@ User.create(email: 'a', password: 'bbb', password_confirmation: 'bbb')
 
 User.create(email: 'b', password: 'ccc', password_confirmation: 'ccc')
 
-Item.create(name: 'a', description: 'b', image: '/uploads/item/image/1/Bridge.png', user_id: 1)
+#Item.create(name: 'A bridge', description: 'This is a nice...bridge', image: 'public/uploads/item/image/1/Bridge.png', user_id: 1)
+
+#Item.create(name: 'A fractal tree', description: 'Isn\'t this pretty?', image: 'public/uploads/item/image/2/icon.png', user_id: 2)

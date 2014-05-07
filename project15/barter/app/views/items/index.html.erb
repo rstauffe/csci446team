@@ -5,7 +5,7 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th>Image</th>
+      <th class="image">Image</th>
       <th>Has been swapped?</th>
 	  <th>Owner ID</th>
       <th></th>
@@ -19,7 +19,7 @@
       <tr>
         <td><%= item.name %></td>
         <td><%= item.description %></td>
-        <td><%= item.image %></td>
+        <td class="image"><%= image_tag(item.image) %></td>
 		<% if item.is_used %>
         <td>Yes</td>
 		<% else %>

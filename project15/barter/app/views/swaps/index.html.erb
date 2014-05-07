@@ -5,10 +5,10 @@
     <tr>
       <th>Original Item Name</th>
 	  <th>Original Item Description</th>
-	  <th>Original Item Image</th>
+	  <th class="image">Original Item Image</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Image</th>
+      <th class="image">Image</th>
       <th></th>
       <th></th>
       <th></th>
@@ -22,10 +22,10 @@
 		  <tr>
 			<td><%= @orig.name %></td>
 			<td><%= @orig.description %></td>
-			<td><%= @orig.image %></td>
+			<td class="image"><%= image_tag(@orig.image) %></td>
 			<td><%= swap.name %></td>
 			<td><%= swap.description %></td>
-			<td><%= swap.image %></td>
+			<td class="image"><%= image_tag(swap.image) %></td>
 		  </tr>
 		<% end %>
     <% end %>
